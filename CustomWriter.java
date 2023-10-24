@@ -24,7 +24,7 @@ public class CustomWriter
 		 try {
 			fw = new FileWriter(file1, true);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		 pw = new PrintWriter(fw);

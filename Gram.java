@@ -10,7 +10,7 @@ public class Gram{
 	private String scrambled;
 	//private String[] scramble;
 
-	public Gram(String scram, String sA, String sB, String sC )
+	public Gram(String scram, String sA, String sB, String sC ) // sets up for solutions for Easy
 	{
 		solutions = new ArrayList<String>();
 		scrambled = scram;
@@ -19,7 +19,7 @@ public class Gram{
 		solutions.add(sC);
 	}
 
-	public Gram(String scram, String ans)
+	public Gram(String scram, String ans)	// sets up solutions for Normal, Mixed, Custom
 	{
 		solutions = new ArrayList<String>();
 		scrambled = scram;

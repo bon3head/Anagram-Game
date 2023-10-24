@@ -53,7 +53,7 @@ public class PlayGame extends JPanel
 			}
 		}
 
-		if(diff==2)//noraml
+		if(diff==2)//normal
 		{
 			while(medSC.hasNext())
 			{
@@ -73,7 +73,7 @@ public class PlayGame extends JPanel
 			mixLen = new ArrayList<String>();
 			String newWord="";
 
-			while(mixSC.hasNext())
+			while(medSC.hasNext())
 			{
 				scanLine = mixSC.nextLine();
 				wordList = scanLine.split(" ");
@@ -115,7 +115,7 @@ public class PlayGame extends JPanel
 			try {
 				addCustom();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+			
 				e.printStackTrace();
 			}
 
@@ -175,6 +175,16 @@ public class PlayGame extends JPanel
 							else
 								play();
 						}
+						else if(stat.indexOf("N")>-1||stat.indexOf("n")>-1)
+						{
+							try {
+								AnagramGame.main(wordList);
+							} catch (Exception e) {
+	
+								e.printStackTrace();
+							}
+							
+						}
 					}
 
 			}
@@ -214,7 +224,17 @@ public class PlayGame extends JPanel
 				try (Scanner playAgain = new Scanner(System.in)) {
 					String stat = playAgain.nextLine();
 				if(stat.indexOf("Y")>-1||stat.indexOf("y")>-1)
-					play();
+					{play();}
+				else if(stat.indexOf("N")>-1||stat.indexOf("n")>-1)
+				{
+					try {
+						AnagramGame.main(wordList);
+					} catch (Exception e) {
+						
+						e.printStackTrace();
+					}
+				}
+					
 				}
 
 
