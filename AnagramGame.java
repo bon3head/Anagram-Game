@@ -16,7 +16,7 @@ public class AnagramGame{
 		try (Scanner enter = new Scanner(System.in)) {
 			System.out.println("\t\t\t****************************************************");
 			System.out.println("\t\t\t\tANAGRAM GAME\n\n\t\t\t\tWhich Version?");
-			System.out.println("\t\t\t\t[1] Easy 6- Shorter words, 3 solutions");
+			System.out.println("\t\t\t\t[1] Easy - Shorter words, 3 solutions");
 			System.out.println("\t\t\t\t[2] Normal - Long words, one solution");
 			System.out.println("\t\t\t\t[3] Hard - Mixed list of 1 & 2");
 			System.out.println("\t\t\t\t[4] Custom - Play with your custom wordlist");

@@ -1,6 +1,7 @@
 import java.util.Scanner;
 //import java.util.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 //import java.util.Arrays;
@@ -150,7 +151,7 @@ public class PlayGame extends JPanel
 				System.out.println("count: " + count);
 				System.out.println("randomList " + randomList);
 				System.out.println("streak" + streak);
-
+				play();
 
 			}
 
@@ -279,6 +280,7 @@ public class PlayGame extends JPanel
 
 	public void addCustom() throws IOException
 	{
+		listPrint(new File("CustomList.txt"));
 
 
 		System.out.println("Want to add an anagram? First, enter a word (scrambled or otherwise).\nNext, enter the case-sensitve solutions that will be guessed by the user.");
@@ -328,6 +330,39 @@ public class PlayGame extends JPanel
 
 
 
+
+	}
+
+	public void listPrint(File file)
+	{
+		mixLen = new ArrayList<String>();
+		
+		
+			try (Scanner fileSC = new Scanner(file)) {
+				System.out.println("Custom List\nAnagram\t\tSolutions\n*******\t\t*********");
+
+				while(fileSC.hasNext())
+				{
+					String newWord = "";
+					scanLine = fileSC.nextLine();
+					wordList = scanLine.split(" ");
+
+					
+					System.out.print(wordList[0]+":\t\t");
+
+					for(int i=1;i<wordList.length;i++)			// takes list of solutions of range {wordList[1],wordList[n]} and
+					{											// arranges them into one String seperated by commas (Ex: rat,tar,art,)
+						newWord+=wordList[i]+"|";
+					}
+
+					System.out.println(newWord);
+
+				}
+				System.out.println();
+			} catch (FileNotFoundException e) {
+				
+				e.printStackTrace();
+			}
 
 	}
 }
