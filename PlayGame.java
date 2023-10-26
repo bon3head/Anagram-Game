@@ -116,7 +116,7 @@ public class PlayGame extends JPanel
 			try {
 				addCustom();
 			} catch (IOException e) {
-			
+
 				e.printStackTrace();
 			}
 
@@ -181,10 +181,10 @@ public class PlayGame extends JPanel
 							try {
 								AnagramGame.main(wordList);
 							} catch (Exception e) {
-	
+
 								e.printStackTrace();
 							}
-							
+
 						}
 					}
 
@@ -231,11 +231,11 @@ public class PlayGame extends JPanel
 					try {
 						AnagramGame.main(wordList);
 					} catch (Exception e) {
-						
+
 						e.printStackTrace();
 					}
 				}
-					
+
 				}
 
 
@@ -271,7 +271,13 @@ public class PlayGame extends JPanel
 						{
 							gameExplain();
 						}
-					}
+						else if(stat.indexOf("N")>-1||stat.indexOf("n")>-1)
+						{
+								
+							AnagramGame.main(wordList);
+							
+							
+						}
 				}
 			}
 		}
@@ -336,8 +342,8 @@ public class PlayGame extends JPanel
 	public void listPrint(File file)
 	{
 		mixLen = new ArrayList<String>();
-		
-		
+
+
 			try (Scanner fileSC = new Scanner(file)) {
 				System.out.println("Custom List\nAnagram\t\tSolutions\n*******\t\t*********");
 
@@ -347,7 +353,7 @@ public class PlayGame extends JPanel
 					scanLine = fileSC.nextLine();
 					wordList = scanLine.split(" ");
 
-					
+
 					System.out.print(wordList[0]+":\t\t");
 
 					for(int i=1;i<wordList.length;i++)			// takes list of solutions of range {wordList[1],wordList[n]} and
@@ -360,7 +366,7 @@ public class PlayGame extends JPanel
 				}
 				System.out.println();
 			} catch (FileNotFoundException e) {
-				
+
 				e.printStackTrace();
 			}
 
