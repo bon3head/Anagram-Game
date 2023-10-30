@@ -257,8 +257,31 @@ public class PlayGame extends JPanel
 				String wordY = scan2.nextLine();
 
 				anagramChecker aC=new anagramChecker(wordX, wordY);
-				if(aC.isAnagram())
+				if(aC.isAnagram()){
 					System.out.println("\nCorrect! " + wordY + " is an angagram of " + wordX+"!");
+
+					System.out.println("***************************\nPlay Again?:\tY\tN\n***************************");
+					try (Scanner playAgain = new Scanner(System.in)) {
+						String stat = playAgain.nextLine();
+
+						if(stat.indexOf("Y")>-1||stat.indexOf("y")>-1)
+						{
+							gameExplain();
+						}
+						else if(stat.indexOf("N")>-1||stat.indexOf("n")>-1)
+						{
+								
+							try {
+								AnagramGame.main(wordList);
+							} catch (Exception e) {
+							
+								e.printStackTrace();
+							}
+							
+							
+						}
+					}
+				}
 				else
 				{
 					System.out.println("\nIncorrrect! " + wordY + " is not an anagram of " + wordX + " because" + aC.failReason()+"!");
@@ -274,13 +297,19 @@ public class PlayGame extends JPanel
 						else if(stat.indexOf("N")>-1||stat.indexOf("n")>-1)
 						{
 								
-							AnagramGame.main(wordList);
+							try {
+								AnagramGame.main(wordList);
+							} catch (Exception e) {
+							
+								e.printStackTrace();
+							}
 							
 							
 						}
-				}
+					}
 			}
 		}
+	}
 
 	}
 
