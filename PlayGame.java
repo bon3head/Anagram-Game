@@ -145,7 +145,7 @@ public class PlayGame extends JPanel
 
 			anagramChecker aC = new anagramChecker(gameS.getScram(), userGuess);
 
-			if(userGuess.equals("DB"))
+			if(userGuess.equals("DB"))						//Debug
 			{
 				System.out.println("listSize: " + list.size());
 				System.out.println("count: " + count);
@@ -171,7 +171,7 @@ public class PlayGame extends JPanel
 						if(stat.indexOf("Y")>-1||stat.indexOf("y")>-1)
 						{
 
-							if(list.size()==0)																					// true = no more options
+							if(list.size()==0)															// size==0 means no more options
 								System.out.println("All anagrams solved!");
 							else
 								play();
@@ -256,7 +256,7 @@ public class PlayGame extends JPanel
 				System.out.println("\nEnter a case-sensitive anagram of that word:");
 				String wordY = scan2.nextLine();
 
-				anagramChecker aC=new anagramChecker(wordX, wordY);
+				anagramChecker aC=new anagramChecker(wordX, wordY);							// Checks if WordY is a valid anagram of WordX
 				if(aC.isAnagram()){
 					System.out.println("\nCorrect! " + wordY + " is an angagram of " + wordX+"!");
 
@@ -266,7 +266,7 @@ public class PlayGame extends JPanel
 
 						if(stat.indexOf("Y")>-1||stat.indexOf("y")>-1)
 						{
-							gameExplain();
+							gameExplain();											// runs method again if user agrees to play again
 						}
 						else if(stat.indexOf("N")>-1||stat.indexOf("n")>-1)
 						{
@@ -362,6 +362,7 @@ public class PlayGame extends JPanel
 					cw.writeGram();
 					System.out.println("Custom Anagram Created");
 				}
+				
 
 
 
