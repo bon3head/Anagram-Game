@@ -24,7 +24,7 @@ public class AnagramGame{
 			System.out.println("\t\t\t\t[6] What's an anagram?");
 			System.out.println("\t\t\t****************************************************");
 
-
+//
 			int choice = enter.nextInt();
 			PlayGame one;
 			if(choice==1){										//easy
